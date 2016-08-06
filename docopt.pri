@@ -16,13 +16,11 @@ HEADERS += $${DOCOPT_ROOT}/docopt.h \
 SOURCES += $${DOCOPT_ROOT}/docopt.cpp
 
 *-g++* {
-    #QMAKE_CXXFLAGS += -Wno-unknown-pragmas
     QMAKE_CFLAGS_WARN_ON += -Wno-unknown-pragmas
     QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 }
 
 *-msvc* {
-    #QMAKE_CXXFLAGS += -Wno-unknown-pragmas
-    QMAKE_CFLAGS_WARN_ON += -Wno-unknown-pragmas
-    QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+    QMAKE_CFLAGS += /wd4068
+    QMAKE_CXXFLAGS += /wd4068
 }
